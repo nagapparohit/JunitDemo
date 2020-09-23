@@ -2,7 +2,10 @@ package com.nagappa;
 
 import static org.junit.Assert.*;
 
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class MyMathTest {
@@ -18,8 +21,27 @@ public class MyMathTest {
 	 */
 	@Before
 	public void before() {
+		//database connectoin all that you can do here
 		System.out.println("Before");
 	}
+	
+	@After
+	public void after() {
+		//if some clean up you wana do you can do in after test
+		System.out.println("after");
+	}
+	//before class and after class method will execute only once before and after after all methdod comp.
+	//before class and after class methods should be static as they are class level methods
+	@BeforeClass
+	public static  void beforeClass() {
+		System.out.println("before class method");
+	}
+	
+	@AfterClass
+	public static void afterClass() {
+		System.out.println("after class method");
+	}
+	
 	//MyMath.sum
 	@Test
 	public void sum_with3numbers() {
